@@ -1,15 +1,36 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../style/Login.scss";
+import {setUser} from "../service/auth";
+import {getUser} from "../service/auth";
+
+console.log(getUser())
 
 const Login = () => {
-
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const history = useHistory();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+
+    const data = { identifier, password };
+
+    fetch(`https://recruitment.ultimate.systems/auth/local`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+        setUser(data);
+        history.push("/lists");
+        setError(null);
+      })
+      .catch((err) => setError(err.message));
+  };
 
   return (
     <section className="login">
@@ -21,8 +42,8 @@ const Login = () => {
             type="text"
             placeholder="Email or Username"
             required
-            value={login}
-            onChange={(e) => setLogin(e.target.value)}
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
           />
           <input
             className="login__input"

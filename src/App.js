@@ -2,6 +2,8 @@ import "./style/App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import PrivateRoute from "./PrivateRoute";
+import ToDoLists from "./pages/ToDoLists";
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register/>
+          </Route>
+          <Route path="/lists">
+            <PrivateRoute component={ToDoLists}/>
           </Route>
         </Switch>
       </div>

@@ -1,4 +1,4 @@
-.login {
+.register {
     margin-top: 141px;
     display: flex;
     justify-content: center;
@@ -10,13 +10,22 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        max-width: 893px;
+        position: relative;
+    }
+
+    &__arrowIcon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 46px;
     }
 
     &__header {
         color: #FF9900;
         font-size: 64px;
         margin: 0;
-        padding: 70px 0 187px;
+        padding: 70px 0 101px;
     }
 
     &__form {
@@ -33,10 +42,7 @@
         padding-left: 18px;
         margin: 0 145px;
         border-radius: 8px;
-
-        &:first-child {
-            margin-bottom: 36px;
-        }
+        margin-bottom: 36px;
     }
 
     &__button {
@@ -46,20 +52,7 @@
         width: 315px;
         height: 89px;
         padding: 24px 0;
-        margin: 64px 0;
+        margin: 64px 0 304px 0;
         border-radius: 8px;
-    }
-
-    &__or {
-       color: #fff;
-       font-size: 24px;
-    }
-
-    &__registerLink {
-        color: #FF9900;
-        font-size: 48px;
-        font-weight: 300;
-        text-decoration: none;
-        margin: 63px 0 213px 0;
     }
 }

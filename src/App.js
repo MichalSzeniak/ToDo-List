@@ -1,15 +1,23 @@
-import './style/App.scss';
-import Login from './pages/Login';
-import { BrowserRouter as Router } from 'react-router-dom';
+import "./style/App.scss";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="logo">ToDo-List</h1>
-      <Router>
-          <Login/>
-      </Router>
-    </div>
+    <Router>
+      <div className="App">
+        <h1 className="logo">ToDo-List</h1>
+        <Switch>
+          <Route exact path="/">
+            <Login/>
+          </Route>
+          <Route path="/register">
+            <Register/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

@@ -13,7 +13,7 @@ const Login = () => {
           <button className="login__button">Login</button>
         </form>
         <span className="login__or">or</span>
-        <Link className="login__registerLink">Create a account</Link>
+        <Link to="/register" className="login__registerLink">Create a account</Link>
       </div>
     </section>
   );

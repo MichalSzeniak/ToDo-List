@@ -34,3 +34,15 @@ body {
     display: inline-block;
     margin: 0;
 }
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label:before {
+  content: url("../assets/checkbox.png");
+}
+
+input[type=checkbox]:checked + label:before {
+  content: url("../assets/checkboxChecked.png");
+}

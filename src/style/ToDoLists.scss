@@ -1,0 +1,16 @@
+. {
+    margin-top: 141px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        background-color: #2D2D2D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 893px;
+        position: relative;
+    }
+}

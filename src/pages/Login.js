@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../style/Login.scss";
 import {setUser} from "../service/auth";
-import {getUser} from "../service/auth";
 
-console.log(getUser())
 
 const Login = () => {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
   const history = useHistory();
 
   const handleSubmit = (e) => {
@@ -27,9 +24,8 @@ const Login = () => {
         // console.log(data);
         setUser(data);
         history.push("/lists");
-        setError(null);
       })
-      .catch((err) => setError(err.message));
+      // .catch((err) => setError(err.message));
   };
 
   return (

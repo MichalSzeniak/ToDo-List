@@ -8,7 +8,6 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
-  const [error, setError] = useState(null);
   const history = useHistory();
 
   const handleSubmit = (e) => {
@@ -27,10 +26,9 @@ const Register = () => {
         .then((data) => {
             console.log(data)
             history.push("/")
-            setError(null)
         })
-        .catch((err) => setError(err.message))
-
+        // .catch((err) => setError(err.message))
+        // console.log(error)
     }
   };
 

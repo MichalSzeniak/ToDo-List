@@ -2,8 +2,7 @@ import React from "react";
 import "../style/ToDoLists.scss";
 import { Link } from "react-router-dom";
 
-const ToDoList = ({ lists, searchTerm, sort }) => {
-
+const ToDoList = ({ lists, searchTerm }) => {
 
   return (
     <div>

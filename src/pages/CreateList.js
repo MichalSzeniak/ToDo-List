@@ -70,7 +70,7 @@ const CreateList = ({ setIsActive, isActive }) => {
               key={Math.floor(Math.random() * (10000 - 1)) + 1}
             >
               <div className="listElement__container">
-                <div className="checkbox__test">
+                <div className="listElement__checkbox">
                   {listItem.isDone ? (
                     <img src={checkboxChecked} alt="" />
                   ) : (

@@ -1,11 +1,25 @@
 .listElement {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
+  &__checkbox {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__TaskName {
+    box-sizing: border-box;
+    background: inherit;
+    border: none;
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    border-bottom: 1px solid #ff9900;
+    padding-left: 24px;
+    transition: 0.3s border-bottom ease-in-out;
+    width: 100%;
+    margin: 0 0 0 14px;
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
+  }
 
   &__container {
     display: flex;
@@ -24,7 +38,7 @@
     width: 80%;
     position: relative;
     overflow: hidden;
-    @media(max-width: 800px) {
+    @media(max-width: 600px) {
       width: 100%;
     }
   }
@@ -56,12 +70,6 @@
     }
   }
 
-  &__checkbox {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-  }
-
   &__listName {
     box-sizing: border-box;
     font-size: 24px;
@@ -84,29 +92,6 @@
     height: 4px;
     background: #ff9900;
   }
-
-  &__TaskName {
-    box-sizing: border-box;
-    background: inherit;
-    border: none;
-    font-size: 24px;
-    font-weight: 400;
-    color: #808080;
-    width: 100%;
-    border-bottom: 1px solid #ff9900;
-    padding-left: 24px;
-    transition: 0.3s border-bottom ease-in-out;
-    margin-left: 14px;
-    @media (max-width: 600px) {
-      font-size: 16px;
-    }
-
-    &:focus {
-      outline: none;
-      border-bottom: 5px solid #ff9900;
-    }
-  }
-
 
   &__formButtons {
     display: flex;

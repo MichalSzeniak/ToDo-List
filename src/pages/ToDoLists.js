@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import triangle from "../assets/triangle.png";
+import triangleUp from "../assets/triangleUp.png";
+import triangleDown from "../assets/triangleDown.png";
 import group from "../assets/Group.png";
 import CreateList from "./CreateList";
 import axios from "axios";
@@ -17,21 +18,29 @@ const ToDoLists = () => {
   const [sort, setSort] = useState(false);
 
 
+const test = () => {
+  if(sort) {
+    return `https://recruitment.ultimate.systems/to-do-lists?_sort=id:ASC`
+  } else {
+    return `https://recruitment.ultimate.systems/to-do-lists?_sort=id:DESC`
+  }
+}
+
   useEffect(() => {
     axios
-      .get("https://recruitment.ultimate.systems/to-do-lists", {
+      .get(test(), {
         headers: {
           Authorization: `Bearer ${getUser().jwt}`,
         },
       })
       .then((response) => {
-        // console.log(response);
+        console.log(response);
         setLists(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [sort]);
 
   return (
     <section className="toDoLists">
@@ -46,18 +55,13 @@ const ToDoLists = () => {
             placeholder="Search"
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button onClick={() => setSort()} className="toDoLists__button">
-            {" "}
-            <img
-              className="toDoLists__button--triangle"
-              src={triangle}
-              alt=""
-            />{" "}
+          <button onClick={() => setSort(!sort)} className="toDoLists__button">
+            <img className="toDoLists__button--triangle" src={sort ? triangleUp : triangleDown} alt="" />
             Sort by
           </button>
         </div>
         {isActive && (
-          <CreateList setIsActive={setIsActive} isActive={isActive} sort={sort}/>
+          <CreateList setIsActive={setIsActive} isActive={isActive}/>
         )}
           {lists && <ToDoList lists={lists} searchTerm={searchTerm} />}
         <button

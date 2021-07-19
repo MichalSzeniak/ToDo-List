@@ -19,6 +19,9 @@
         background-color: inherit;
         border: none;
         cursor: pointer;
+        @media (max-width: 400px) {
+            transform: scale(75%);
+          }
     }
 
     &__search {
@@ -31,9 +34,11 @@
         border-radius: 8px;
         position: relative;
         display: flex;
+        transition: 0.3s background-color ease-in-out;
     
         &:focus {
           outline: none;
+          background-color: #bdbdbd;
         }
 
         &--container {
@@ -65,7 +70,7 @@
     }
 
     &__createButton {
-        position: absolute;
+        position: fixed;
         bottom: 40px;
         right: 40px;
         background-color: inherit;
@@ -73,10 +78,13 @@
         cursor: pointer;
         padding: 0;
         z-index: 1;
+        @media (max-width: 400px) {
+            transform: scale(75%);
+            bottom: 0;
+            right: 0;
+          }
     }
 }
-
-
 
 .toDoList {
     display: flex;

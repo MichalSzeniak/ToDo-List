@@ -5,7 +5,7 @@ import axios from "axios";
 import { getUser } from "../service/auth";
 import checkbox from "../assets/checkbox.png";
 import checkboxChecked from "../assets/checkboxChecked.png";
-import garbage from "../assets/garbage.png";
+import garbage from "../assets/garbage.svg";
 
 const ListElement = () => {
   const [isDone, setIsDone] = useState(false);
@@ -94,7 +94,7 @@ const ListElement = () => {
 
   return (
     <section className="listElement">
-      <button to="/" onClick={deleteTaskList} className="toDoLists__logoutButton">
+      <button to="/" onClick={deleteTaskList} className="listElement__garbage">
         <img src={garbage} alt="garbage" />
       </button>
       <div className="listElement__container">

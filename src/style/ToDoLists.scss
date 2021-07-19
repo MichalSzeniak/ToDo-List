@@ -1,16 +1,112 @@
-. {
-    margin-top: 141px;
+.toDoLists {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 
     &__container {
-        background-color: #2D2D2D;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        max-width: 893px;
+        min-height: 80vh;
+        width: 80%;
+    }
+
+    &__search--container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 65px 0 31px 0;
+    }
+
+    &__logoutButton {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__search {
+        box-sizing: border-box;
+        font-size: 24px;
+        font-weight: 300;
+        padding: 11px 16px;
+        color: black;
+        border: none;
+        border-radius: 8px;
         position: relative;
+    
+        &:focus {
+          outline: none;
+        }
+    }
+
+    &__button {
+        position: relative;
+        padding: 11px 93px 11px 97px;
+        font-size: 24px;
+        border-radius: 8px;
+        cursor: pointer;
+     
+        &--triangle {
+            position: absolute;
+            left: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__createButton {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+}
+
+
+
+.toDoList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #2D2D2D;
+    margin: 36px 0;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 24px;
+    height: 100px;
+    padding: 0 36px;
+    text-decoration: none;
+
+    &__container {
+        width: 100%;
+    }
+
+    &__name {
+        // padding: 36px;
+        margin: 0;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    &__data {
+        font-style: italic;
+        margin: 0;
+    }
+
+    &__statistics {
+        margin: 0;
     }
 }

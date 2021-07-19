@@ -12,3 +12,7 @@ export const isLoggedIn = () => {
     const user = getUser()
     return !!user.jwt
 }
+
+export const logout = () => {
+  window.localStorage.setItem("User", "");
+}

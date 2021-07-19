@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import "../style/ListElement.scss"
+import "../style/ListElement.scss";
 import axios from "axios";
 import { getUser } from "../service/auth";
-import checkbox from "../assets/checkbox.png";
-import checkboxChecked from "../assets/checkboxChecked.png";
 import garbage from "../assets/garbage.svg";
+import Task from "./Task";
 
 const ListElement = () => {
   const [isDone, setIsDone] = useState(false);
@@ -66,7 +65,7 @@ const ListElement = () => {
       )
       .then((response) => {
         console.log(response);
-        history.push("/lists")
+        history.push("/lists");
       })
       .catch((error) => {
         console.log(error);
@@ -75,22 +74,19 @@ const ListElement = () => {
 
   const deleteTaskList = () => {
     axios
-      .delete(
-        `https://recruitment.ultimate.systems//to-do-lists/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${getUser().jwt}`,
-            "Content-Type": "application/json; charset=utf-8",
-          },
-        }
-      )
+      .delete(`https://recruitment.ultimate.systems//to-do-lists/${id}`, {
+        headers: {
+          Authorization: `Bearer ${getUser().jwt}`,
+          "Content-Type": "application/json; charset=utf-8",
+        },
+      })
       .then((response) => {
-        history.push("/lists")
+        history.push("/lists");
       })
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   return (
     <section className="listElement">
@@ -107,27 +103,25 @@ const ListElement = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <span className="listElement__break"></span>
-          {task.map((listItem) => (
-            <div className="listTask" key={listItem.id}>
-              <div className="listTask__container">
-                <div className="checkbox__test">
-                  {listItem.isDone ? (
-                    <img src={checkboxChecked} alt="" />
-                  ) : (
-                    <img src={checkbox} alt="" />
-                  )}
-                </div>
-                <p className="listTask__TaskName">{listItem.name}</p>
-              </div>
-            </div>
-          ))}
+          <ul>
+            {task.map((item) => (
+              <Task
+                id={item.id}
+                isDone={item.isDone}
+                name={item.name}
+                setTask={setTask}
+                task={item}
+                toDoList={task}
+              />
+            ))}
+          </ul>
 
           <form
             className="listElement__form"
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="listElement__form--inputs">
-              <div className="checkbox__test">
+              <div className="listElement__checkbox">
                 <input
                   type="checkbox"
                   checked={isDone}

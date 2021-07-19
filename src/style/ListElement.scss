@@ -31,8 +31,8 @@
 
   &__garbage {
       position: fixed;
-      top: 10px;
-      right: 10px;
+      top: 40px;
+      right: 40px;
       background-color: #ffffff00;
       border: none;
       cursor: pointer;
@@ -48,6 +48,18 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 120px;
+    
+    &--inputs {
+      box-sizing: border-box;
+      display: flex;
+      margin: 20px 38px 0 43px;
+    }
+  }
+
+  &__checkbox {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
   }
 
   &__listName {
@@ -95,11 +107,6 @@
     }
   }
 
-  &__form--inputs {
-    box-sizing: border-box;
-    display: flex;
-    margin: 20px 38px 0 43px;
-  }
 
   &__formButtons {
     display: flex;
@@ -187,39 +194,6 @@
 
     &:hover {
       background-color: #c07402;
-    }
-  }
-}
-
-.checkbox__test {
-  width: 30px;
-  height: 30px;
-}
-
-
-.listTask {
-  box-sizing: border-box;
-  width: 100%;
-
-  &__container {
-    margin: 20px 38px 20px 43px;
-    display: flex;
-  }
-
-  &__TaskName {
-    box-sizing: border-box;
-    background: inherit;
-    border: none;
-    font-size: 24px;
-    font-weight: 400;
-    color: #fff;
-    border-bottom: 1px solid #ff9900;
-    padding-left: 24px;
-    transition: 0.3s border-bottom ease-in-out;
-    width: 100%;
-    margin: 0 0 0 14px;
-    @media (max-width: 600px) {
-      font-size: 16px;
     }
   }
 }

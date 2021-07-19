@@ -1,0 +1,32 @@
+.task {
+  box-sizing: border-box;
+  width: 100%;
+
+  &__checkbox {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  &__container {
+    margin: 20px 38px 0px 0px;
+    display: flex;
+  }
+
+  &__TaskName {
+    box-sizing: border-box;
+    background: inherit;
+    border: none;
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    border-bottom: 1px solid #ff9900;
+    padding-left: 24px;
+    transition: 0.3s border-bottom ease-in-out;
+    width: 100%;
+    margin: 0 0 0 14px;
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
+  }
+}

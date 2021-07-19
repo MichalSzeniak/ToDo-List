@@ -11,6 +11,7 @@
         align-items: center;
         flex-direction: column;
         max-width: 893px;
+        width: 100%;
         position: relative;
     }
 
@@ -26,12 +27,17 @@
         font-size: 64px;
         margin: 0;
         padding: 70px 0 101px;
+        text-align: center;
+        @media (max-width: 650px) {
+            font-size: 48px;
+          }
     }
 
     &__form {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     &__input {
@@ -40,9 +46,18 @@
         font-size: 24px;
         box-sizing: border-box;
         padding-left: 18px;
-        margin: 0 145px;
+        margin: 0;
         border-radius: 8px;
         margin-bottom: 36px;
+        border: none;
+        transition: 0.3s background-color ease-in-out;
+        &:focus {
+            background-color: rgb(189, 189, 189);
+        }
+        @media (max-width: 600px) {
+            width: 90%;
+            font-size: 16px;
+          }
     }
 
     &__button {
@@ -54,5 +69,8 @@
         padding: 24px 0;
         margin: 64px 0 304px 0;
         border-radius: 8px;
+        @media (max-width: 600px) {
+            width: 90%;
+          }
     }
 }

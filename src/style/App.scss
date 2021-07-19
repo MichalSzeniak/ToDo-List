@@ -33,6 +33,12 @@ body {
     padding: 40px 0 0 40px;
     display: inline-block;
     margin: 0;
+    @media(max-width: 600px) {
+      font-size: 48px;
+      padding: 64px 0 0 0;
+      width: 100%;
+      text-align: center;
+  }
 }
 
 input[type=checkbox] {

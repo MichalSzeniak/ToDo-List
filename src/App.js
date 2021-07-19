@@ -1,5 +1,5 @@
 import "./style/App.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PrivateRoute from "./PrivateRoute";
@@ -8,22 +8,20 @@ import ListElement from "./pages/ListElement";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <div className="App">
         <h1 className="logo">ToDo-List</h1>
         <Switch>
-          <Route exact path="/">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/lists/:id">
-            <PrivateRoute component={ListElement} />
-          </Route>
-          <Route path="/lists">
-            <PrivateRoute component={ToDoLists} />
-          </Route>
+          <Route path="/" exact render={() => <Login />} />
+          <Route path="/register" render={() => <Register />} />
+          <Route
+            path="/lists/:id"
+            render={() => <PrivateRoute component={ListElement} />}
+          />
+          <Route
+            path="/lists"
+            render={() => <PrivateRoute component={ToDoLists} />}
+          />
         </Switch>
       </div>
     </Router>

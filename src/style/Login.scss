@@ -1,66 +1,91 @@
 .login {
-    margin-top: 141px;
+  margin-top: 141px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    background-color: #2d2d2d;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    max-width: 893px;
+    width: 100%;
+  }
 
-    &__container {
-        background-color: #2D2D2D;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+  &__header {
+    color: #ff9900;
+    font-size: 64px;
+    margin: 0;
+    padding: 70px 0 187px;
+    text-align: center;
+    @media (max-width: 600px) {
+      width: 80%;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__input {
+    width: 600px;
+    height: 50px;
+    font-size: 24px;
+    box-sizing: border-box;
+    padding-left: 18px;
+    margin: 0 145px;
+    border-radius: 8px;
+    border: none;
+    transition: 0.3s background-color ease-in-out;
+    &:focus {
+        background-color: rgb(189, 189, 189);
     }
 
-    &__header {
-        color: #FF9900;
-        font-size: 64px;
-        margin: 0;
-        padding: 70px 0 187px;
+    &:first-child {
+      margin-bottom: 36px;
     }
 
-    &__form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    @media (max-width: 600px) {
+      width: 90%;
+      margin: 0;
+      font-size: 16px;
     }
+  }
 
-    &__input {
-        width: 600px;
-        height: 50px;
-        font-size: 24px;
-        box-sizing: border-box;
-        padding-left: 18px;
-        margin: 0 145px;
-        border-radius: 8px;
-
-        &:first-child {
-            margin-bottom: 36px;
-        }
+  &__button {
+    background-color: #ff9900;
+    color: #fff;
+    font-size: 36px;
+    width: 315px;
+    height: 89px;
+    padding: 24px 0;
+    margin: 64px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    @media (max-width: 600px) {
+      width: 90%;
     }
+  }
 
-    &__button {
-        background-color: #FF9900;
-        color: #fff;
-        font-size: 36px;
-        width: 315px;
-        height: 89px;
-        padding: 24px 0;
-        margin: 64px 0;
-        border-radius: 8px;
-        cursor: pointer;
-    }
+  &__or {
+    color: #fff;
+    font-size: 24px;
+  }
 
-    &__or {
-       color: #fff;
-       font-size: 24px;
+  &__registerLink {
+    color: #ff9900;
+    font-size: 48px;
+    font-weight: 300;
+    text-decoration: none;
+    margin: 63px 0 213px 0;
+    text-align: center;
+    @media (max-width: 450px) {
+      font-size: 32px;
     }
-
-    &__registerLink {
-        color: #FF9900;
-        font-size: 48px;
-        font-weight: 300;
-        text-decoration: none;
-        margin: 63px 0 213px 0;
-    }
+  }
 }

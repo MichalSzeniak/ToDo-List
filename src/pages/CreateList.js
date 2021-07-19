@@ -45,6 +45,7 @@ const CreateList = ({ setIsActive, isActive }) => {
       )
       .then((response) => {
         console.log(response);
+        setIsActive(false)
       })
       .catch((error) => {
         console.log(error);

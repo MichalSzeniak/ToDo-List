@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import ToDoLists from "./pages/ToDoLists";
+import ListElement from "./pages/ListElement";
 
 function App() {
   return (
@@ -12,13 +13,16 @@ function App() {
         <h1 className="logo">ToDo-List</h1>
         <Switch>
           <Route exact path="/">
-            <Login/>
+            <Login />
           </Route>
           <Route path="/register">
-            <Register/>
+            <Register />
+          </Route>
+          <Route path="/lists/:id">
+            <PrivateRoute component={ListElement} />
           </Route>
           <Route path="/lists">
-            <PrivateRoute component={ToDoLists}/>
+            <PrivateRoute component={ToDoLists} />
           </Route>
         </Switch>
       </div>

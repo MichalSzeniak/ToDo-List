@@ -87,7 +87,7 @@ const CreateList = ({ setIsActive, isActive }) => {
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="createList__form--inputs">
-              <div className="checkbox__test">
+              <div className="listElement__checkbox">
                 <input
                   type="checkbox"
                   checked={isDone}

@@ -48,10 +48,10 @@ const ListElement = () => {
       });
   }, []);
 
-  const handleSave = async () => {
+  const handleSave = () => {
     axios
       .put(
-        `https://recruitment.ultimate.systems//to-do-lists/${id}`,
+        `https://recruitment.ultimate.systems/to-do-lists/${id}`,
         {
           name,
           task,
@@ -74,7 +74,7 @@ const ListElement = () => {
 
   const deleteTaskList = () => {
     axios
-      .delete(`https://recruitment.ultimate.systems//to-do-lists/${id}`, {
+      .delete(`https://recruitment.ultimate.systems/to-do-lists/${id}`, {
         headers: {
           Authorization: `Bearer ${getUser().jwt}`,
           "Content-Type": "application/json; charset=utf-8",
@@ -110,7 +110,6 @@ const ListElement = () => {
                 isDone={item.isDone}
                 name={item.name}
                 setTask={setTask}
-                task={item}
                 toDoList={task}
               />
             ))}

@@ -53,7 +53,7 @@ const Login = () => {
         </form>
         <span className="login__or">or</span>
         <Link to="/register" className="login__registerLink">
-          Create a account
+          Create an account
         </Link>
       </div>
     </section>

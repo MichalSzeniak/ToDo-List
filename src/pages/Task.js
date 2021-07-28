@@ -4,12 +4,12 @@ import checkboxChecked from "../assets/checkboxChecked.png";
 import "../style/Task.scss"
 
 
-const Task = ({id, isDone, name, task, setTask, toDoList}) => {
+const Task = ({id, isDone, name, setTask, toDoList}) => {
 
 
     const handleConfirm = () => {
         setTask(toDoList.map(item => {
-        if(item.id === task.id) {
+        if(item.id === id) {
           return {
             ...item, isDone: !item.isDone
           };

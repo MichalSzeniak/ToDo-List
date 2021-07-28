@@ -38,7 +38,7 @@ const Register = () => {
         <Link to="/" className="register__arrowIcon">
           <img src={arrow} alt="" />
         </Link>
-        <h2 className="register__header">Create a new account</h2>
+        <h2 className="register__header">Create an new account</h2>
         <form className="register__form" onSubmit={handleSubmit}>
           <input
             className="register__input"

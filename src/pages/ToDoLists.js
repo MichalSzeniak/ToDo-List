@@ -34,7 +34,7 @@ const test = () => {
         },
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setLists(response.data);
       })
       .catch((error) => {

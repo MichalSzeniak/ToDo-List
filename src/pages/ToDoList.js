@@ -21,7 +21,7 @@ const ToDoList = ({ lists, searchTerm }) => {
           <Link to={`/lists/${item.id}`} key={item.id} className="toDoList">
             <p className="toDoList__name">{item.name}</p>
             <p className="toDoList__data">
-              Created ad:{" "}
+              Created at:{" "}
               {item.created_at.substr(0, 10).split("-").reverse().join("-")}
             </p>
             <p className="toDoList__statistics">
